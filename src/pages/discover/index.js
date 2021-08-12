@@ -1,14 +1,15 @@
 import React, { memo } from 'react'
 
 import { NavLink } from 'react-router-dom'
-
+import { renderRoutes } from 'react-router-config'
 import {
   dicoverMenu
 } from "@/utils/local-data";
 
 import { DiscoverWrapper, Menu } from './style'
 
-export default memo(function Discover () {
+export default memo(function Discover (props) {
+  const { route } = props;
   return (
     <DiscoverWrapper>
       <div className="top">
@@ -23,6 +24,7 @@ export default memo(function Discover () {
             })
           }
         </Menu>
+        {renderRoutes(route.routes)}
       </div>
     </DiscoverWrapper>
   )
