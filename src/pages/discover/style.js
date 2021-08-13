@@ -1,13 +1,13 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const DiscoverWrapper = styled.div`
-  min-height: 70vh;
   .top {
     height: 30px;
     background-color: #C20C0C;
   }
 `
-export const Menu = styled.div`
+
+export const TopMenu = styled.div`
   display: flex;
   padding-left: 180px;
   position: relative;

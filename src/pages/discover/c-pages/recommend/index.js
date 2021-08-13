@@ -1,19 +1,23 @@
-import React, { memo, useEffect } from 'react'
-import { useDispatch, useSelector, shallowEqual } from 'react-redux'
+import React, { memo } from 'react'
 
-import { getRecommend } from './store/actionCreateors'
+import TopBanner from './components/top-banners'
+import HotRecommends from './components/hot-recommeds'
+import NewAlbum from './components/new-album'
+import RaningkList from './components/ranking-list'
 
-export default memo(function Recommend () {
-  const dispatch = useDispatch()
-  const state = useSelector((state) => state.recommend, shallowEqual)
-  useEffect(() => {
-    dispatch(getRecommend())
-  }, [dispatch])
-  console.log(state)
+import { Content, RecommendLeft } from './style'
+
+export default memo(function Recommend() {
   return (
-    <div>123
-      {state.recommends.length}
-
+    <div>
+      <TopBanner />
+      <Content className="wrap-v2">
+        <RecommendLeft>
+          <HotRecommends />
+          <NewAlbum />
+          <RaningkList />
+        </RecommendLeft>
+      </Content>
     </div>
   )
 })
