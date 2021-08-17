@@ -26,3 +26,13 @@ export function getNewAlbum(data) {
     params: data,
   })
 }
+
+// 获取榜单数据
+export function getTopList(idx) {
+  return request({
+    url: '/top/list',
+    params: {
+      idx,
+    },
+  })
+}

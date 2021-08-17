@@ -2,21 +2,23 @@ import React, { memo, Suspense } from 'react'
 
 import { HashRouter } from 'react-router-dom'
 import { renderRoutes } from 'react-router-config'
-import { Provider } from "react-redux";
+import { Provider } from 'react-redux'
 import store from './store'
 
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import AppPlayerBar from '@/pages/player/app-player-bar'
 import routes from '@/router'
-export default memo(function App () {
+export default memo(function App() {
   return (
     <Provider store={store}>
       <HashRouter>
-        < Header />
+        <Header />
         <Suspense fallback={<div>loading</div>}>
           {renderRoutes(routes)}
         </Suspense>
-        < Footer />
+        <Footer />
+        <AppPlayerBar />
       </HashRouter>
     </Provider>
   )
